@@ -1,0 +1,37 @@
+/* App-specific styles */
+
+/* 闸门人工干预滑杆 */
+.gate-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.55), rgba(34, 211, 238, 0.15));
+  outline: none;
+}
+.gate-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22d3ee;
+  border: 2px solid #050810;
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
+  cursor: pointer;
+}
+.gate-slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #22d3ee;
+  border: 2px solid #050810;
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.7);
+  cursor: pointer;
+}
+.gate-slider:disabled {
+  opacity: 0.35;
+}
+.gate-slider:disabled::-webkit-slider-thumb {
+  cursor: not-allowed;
+}

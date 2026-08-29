@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark intelligence palette */
+    --bg: #050810;
+    --panel: #0c1220;
+    --panel-2: #111a2b;
+    --line: #1a2540;
+    --ink: #dbe7f4;
+    --ink-dim: #7d8ca8;
+    --ink-faint: #4d5b76;
+    --cyan: #22d3ee;
+    --mint: #34d399;
+    --amber: #fbbf24;
+    --red: #f87171;
+    --magenta: #e879f9;
+
+    --background: 222 53% 4%;
+    --foreground: 213 44% 91%;
+    --card: 220 50% 9%;
+    --card-foreground: 213 44% 91%;
+    --popover: 220 50% 9%;
+    --popover-foreground: 213 44% 91%;
+    --primary: 187 85% 53%;
+    --primary-foreground: 222 53% 4%;
+    --secondary: 220 45% 14%;
+    --secondary-foreground: 213 44% 91%;
+    --muted: 220 45% 14%;
+    --muted-foreground: 216 20% 60%;
+    --accent: 220 45% 14%;
+    --accent-foreground: 187 85% 53%;
+    --destructive: 0 72% 65%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 42% 18%;
+    --input: 220 42% 18%;
+    --ring: 187 85% 53%;
+    --radius: 0.375rem;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Inter, -apple-system, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei',
+      'Noto Sans SC', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 70% -10%, rgba(34, 211, 238, 0.05), transparent 60%),
+      radial-gradient(900px 500px at 10% 110%, rgba(52, 211, 153, 0.04), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(34, 211, 238, 0.28);
+  }
+
+  /* Thin themed scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1a2540;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #22d3ee66;
+  }
+
+  *:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.55);
+  }
+}
+
+@layer utilities {
+  .font-mono2 {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  .num {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  .label-caps {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 10px;
+    color: var(--ink-faint);
+  }
+  .panel {
+    background: linear-gradient(180deg, var(--panel-2) 0%, var(--panel) 100%);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    position: relative;
+  }
+  .panel-glass {
+    background: rgba(12, 18, 32, 0.72);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--line);
+  }
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.014) 0px,
+      rgba(255, 255, 255, 0.014) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  }
+  .hairline-b {
+    border-bottom: 1px solid var(--line);
+  }
+  .text-glow-cyan {
+    text-shadow: 0 0 12px rgba(34, 211, 238, 0.45);
+  }
+}
+
+/* ---------- ambient motion ---------- */
+@keyframes ledPulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 6px 1px currentColor;
+  }
+  50% {
+    opacity: 0.45;
+    box-shadow: 0 0 2px 0px currentColor;
+  }
+}
+.led {
+  animation: ledPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.radar-sweep {
+  animation: radarSweep 4.2s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes tickerScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker-track {
+  animation: tickerScroll 48s linear infinite;
+}
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.rise-in {
+  animation: riseIn 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -240;
+  }
+}
+.flow-line {
+  stroke-dasharray: 6 6;
+  animation: dashFlow 8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .led,
+  .radar-sweep,
+  .ticker-track,
+  .flow-line {
+    animation: none;
+  }
+}
