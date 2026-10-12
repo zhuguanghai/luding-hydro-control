@@ -61,11 +61,8 @@ export default function Login() {
         <div className="panel-glass scanlines rounded-lg p-8">
           {/* 头部 */}
           <div className="mb-8 text-center">
-            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-md border border-[var(--line)] bg-[var(--panel)]">
-              <svg viewBox="0 0 32 32" className="h-8 w-8">
-                <path d="M4 20 C10 12, 14 24, 20 16 S28 10, 30 14" fill="none" stroke="#22d3ee" strokeWidth="2" strokeLinecap="round" className="flow-line" />
-                <path d="M6 26 h20" stroke="#34d399" strokeWidth="2" strokeLinecap="round" opacity="0.7" />
-              </svg>
+            <div className="mx-auto mb-4 flex h-20 items-center justify-center">
+              <img src="/logo-hd.png" alt="中国华电 CHD" className="h-full w-auto" style={{ filter: 'drop-shadow(0 0 10px rgba(34,211,238,.25))' }} />
             </div>
             <h1 className="text-[22px] font-bold tracking-wide text-[var(--ink)]">泸定水电站</h1>
             <p className="mt-1 text-[13px] text-[var(--ink-dim)]">智慧化上下游水情控制系统</p>

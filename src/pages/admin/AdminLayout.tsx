@@ -26,13 +26,7 @@ export default function AdminLayout() {
       <aside className="sticky top-0 flex h-screen w-[232px] shrink-0 flex-col border-r border-[var(--line)] bg-[rgba(8,12,22,.9)]">
         <div className="border-b border-[var(--line)] px-4 py-4">
           <div className="flex items-center gap-2.5">
-            <svg viewBox="0 0 32 32" className="h-8 w-8">
-              <circle cx="16" cy="16" r="13" fill="none" stroke="#1a2540" strokeWidth="1.5" />
-              <g className="radar-sweep" style={{ transformOrigin: '16px 16px' }}>
-                <line x1="16" y1="16" x2="16" y2="4" stroke="#22d3ee" strokeWidth="1.5" />
-              </g>
-              <circle cx="16" cy="16" r="2" fill="#22d3ee" />
-            </svg>
+            <img src="/logo-hd-mark.png" alt="中国华电" className="h-8 w-auto" />
             <div>
               <div className="text-[13px] font-bold">泸定水情控制系统</div>
               <div className="label-caps mt-0.5">中国华电 · 管理后台 v3.0</div>

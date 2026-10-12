@@ -48,14 +48,7 @@ export default function Screen() {
       <header className="sticky top-0 z-20 border-b border-[var(--line)] bg-[rgba(5,8,16,.85)] backdrop-blur-md">
         <div className="flex items-center gap-4 px-4 py-2.5">
           <div className="flex items-center gap-3">
-            <svg viewBox="0 0 32 32" className="h-8 w-8">
-              <circle cx="16" cy="16" r="13" fill="none" stroke="#1a2540" strokeWidth="1.5" />
-              <circle cx="16" cy="16" r="8" fill="none" stroke="#1a2540" strokeWidth="1" />
-              <g className="radar-sweep" style={{ transformOrigin: '16px 16px' }}>
-                <line x1="16" y1="16" x2="16" y2="4" stroke="#22d3ee" strokeWidth="1.5" />
-              </g>
-              <circle cx="16" cy="16" r="2" fill="#22d3ee" />
-            </svg>
+            <img src="/logo-hd-mark.png" alt="中国华电" className="h-9 w-auto" style={{ filter: 'drop-shadow(0 0 6px rgba(34,211,238,.25))' }} />
             <div>
               <h1 className="text-[15px] font-bold tracking-wide">泸定水电站智慧化上下游水情控制系统</h1>
               <p className="text-[10.5px] text-[var(--ink-faint)]">
